@@ -1,0 +1,156 @@
+/* About Page Specific Styles */
+body {
+    background-color: #050505;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Adjust header for static pages to not overlap content initially */
+.about-main {
+    padding-top: 100px;
+}
+
+.about-hero {
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #111, #050505);
+    border-bottom: 1px solid #222;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(227, 121, 62, 0.1) 0%, transparent 60%);
+    z-index: 0;
+}
+
+.about-hero .container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: #fff;
+    background: linear-gradient(90deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero p {
+    font-size: 1.25rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.about-section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-grid.reverse {
+    direction: rtl;
+}
+
+.about-grid.reverse>* {
+    direction: ltr;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-subtitle {
+    color: #e3793e;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-body {
+    color: #999;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.about-image img,
+.about-image svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img,
+.about-image:hover svg {
+    transform: scale(1.05);
+}
+
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-grid.reverse {
+        direction: ltr;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnage - Premium Gaming Gear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .vid-desktop {
+            display: block;
+        }
+
+        .vid-mobile {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .vid-desktop {
+                display: none !important;
+            }
+
+            .vid-mobile {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Intro Video Loader -->
+    <div id="intro-loader">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="assets/intro.mp4" type="video/mp4">
+            <!-- Fallback if video is missing -->
+            <div class="intro-fallback">
+                <h1>KARNAGE</h1>
+            </div>
+        </video>
+    </div>
+
+
+
+    <!-- Page Wrapper for Fade-in Transition -->
+    <div id="page-wrapper">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-container">
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Brand Logo -->
+                <div class="logo-container">
+                    <a href="index-original.html" class="brand-logo">
+                        <!-- Placeholder text for logo if image not available, user asked for image logo but we don't have one yet. -->
+                        <img src="assets/Karnage logo Orange (2).png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <!-- Categories Dropdown Trigger -->
+                        <li class="nav-item has-dropdown">
+                            <a href="#" class="nav-link">CATEGORIES <i class="fa-solid fa-chevron-down"></i></a>
+
+                            <!-- Mega Menu Dropdown -->
+                            <div class="mega-dropdown">
+                                <div class="dropdown-content">
+                                    <div class="category-grid">
+                                        <a href="category.html" class="category-card">
+                                            <div class="cat-image-wrapper">
+                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Keyboards"
+                                                    alt="Keyboards" class="cat-img">
+                                            </div>
+                                            <span class="cat-title">Keyboards</span>
+                                        </a>
+                                        <a href="category.html" class="category-card">
+                                            <div class="cat-image-wrapper">
+                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Mice" alt="Mice"
+                                                    class="cat-img">
+                                            </div>
+                                            <span class="cat-title">Mouse</span>
+                                        </a>
+                                        <a href="category.html" class="category-card">
+                                            <div class="cat-image-wrapper">
+                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Apparel"
+                                                    alt="Mousepads" class="cat-img"> <!-- User said Mousepad -->
+                                            </div>
+                                            <span class="cat-title">Mousepads</span>
+                                        </a>
+                                        <a href="category.html" class="category-card">
+                                            <div class="cat-image-wrapper">
+                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Audio"
+                                                    alt="Headsets" class="cat-img"> <!-- User said Headset -->
+                                            </div>
+                                            <span class="cat-title">Headsets</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">SOFTWARE</a></li>
+                        <li class="nav-item"><a href="support.html" class="nav-link">SUPPORT</a></li>
+                        <li class="nav-item"><a href="blogs.html" class="nav-link">BLOGS</a></li>
+                    </ul>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <!-- Account Dropdown -->
+                    <div class="action-item account-dropdown-container">
+                        <a href="#" class="action-link"><i class="fa-regular fa-user"></i></a>
+                        <div class="account-dropdown">
+                            <ul>
+                                <li><a href="#" class="btn-signin">Sign In</a></li>
+                                <li><a href="#" class="btn-login">Log In</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">My Orders</a></li>
+                                <li><a href="#">Account Settings</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cart Trigger -->
+                    <div class="action-item cart-container">
+                        <a href="javascript:void(0)" class="action-link cart-link" id="cart-drawer-trigger">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart-count">1</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Hero Slider (Card Style) - Commented Out -->
+        <!--
+    <section class="hero-slider-section">
+        <div class="slider-container">
+
+            <div class="slide active" data-bg-color="#2B0F05">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <span class="slide-subtitle">High-end Audio</span>
+                        <h2 class="slide-title">Premium Wireless Headphones</h2>
+                        <a href="#" class="btn-primary">Discover Collection</a>
+                    </div>
+                    <div class="slide-image">
+                        <img src="assets/Karnage headphone.png" alt="Headphones">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-bg-color="#0e1a2b">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <span class="slide-subtitle">Precision Gaming</span>
+                        <h2 class="slide-title">Tactile Mechanical Keyboards</h2>
+                        <a href="#" class="btn-primary">Shop Keyboards</a>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://placehold.co/600x600/0f1923/e3793e?text=Keyboards" alt="Keyboards">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-bg-color="#141414">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <span class="slide-subtitle">Ultimate Control</span>
+                        <h2 class="slide-title">Ultra-Lightweight Mice</h2>
+                        <a href="#" class="btn-primary">View Mice</a>
+                    </div>
+                    <div class="slide-image">
+                        <img src="https://placehold.co/600x600/1e1e1e/e3793e?text=Mice" alt="Mice">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-dots">
+                <div class="dot active" data-index="0">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">1</span>
+                </div>
+                <div class="dot" data-index="1">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">2</span>
+                </div>
+                <div class="dot" data-index="2">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">3</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    -->
+
+        <!-- Hero Slider (Full Width) -->
+        <section class="hero-slider-full">
+            <!-- Slide 1 (Video) -->
+            <div class="slide-full active">
+                <!-- Desktop Video -->
+                <video autoplay loop muted playsinline class="vid-desktop"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; z-index: 0;">
+                    <source src="herosliderassets/02_Karnage_logo animation.mp4" type="video/mp4">
+                </video>
+                <!-- Mobile Video -->
+                <video autoplay loop muted playsinline class="vid-mobile"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; z-index: 0;">
+                    <source src="herosliderassets/Karnage_logo animation_mobile.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-full">
+                <!-- Desktop Image -->
+                <div class="bg-desktop" style="background-image: url('herosliderassets/slide2desktop.jpeg');">
+                </div>
+                <!-- Mobile Image -->
+                <div class="bg-mobile" style="background-image: url('herosliderassets/slide2mobile.jpeg');">
+                </div>
+
+                <div class="slide-content-full">
+                    <span class="slide-subtitle">Premium Wireless Keyboards</span>
+                    <h2 class="slide-title">The Legend <br>Comes to Life</h2>
+                    <a href="#" class="btn-primary">Discover Collection</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-full">
+                <!-- Desktop Image -->
+                <div class="bg-desktop" style="background-image: url('herosliderassets/slide3desktop.jpeg');">
+                </div>
+                <!-- Mobile Image -->
+                <div class="bg-mobile" style="background-image: url('herosliderassets/slide3mobile.jpeg');">
+                </div>
+
+                <div class="slide-content-full">
+                    <span class="slide-subtitle">Precision Gaming</span>
+                    <h2 class="slide-title">A New Era of<br>Gaming</h2>
+                    <a href="#" class="btn-primary">Shop Keyboards</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide-full">
+                <!-- Desktop Image -->
+                <div class="bg-desktop" style="background-image: url('herosliderassets/slide4desktop.jpeg');">
+                </div>
+                <!-- Mobile Image -->
+                <div class="bg-mobile" style="background-image: url('herosliderassets/slide4mobile.jpeg');">
+                </div>
+
+                <div class="slide-content-full">
+                    <span class="slide-subtitle">Ultimate Control</span>
+                    <h2 class="slide-title">Unleash The<br>Karnage</h2>
+                    <a href="#" class="btn-primary">Shop Now</a>
+                </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="slider-dots-full">
+                <div class="dot active" data-index="0">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">1</span>
+                </div>
+                <div class="dot" data-index="1">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">2</span>
+                </div>
+                <div class="dot" data-index="2">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">3</span>
+                </div>
+                <div class="dot" data-index="3">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="progress-ring__circle" stroke="white" stroke-width="2" fill="transparent" r="18"
+                            cx="20" cy="20" />
+                    </svg>
+                    <span class="dot-number">4</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Top Categories Section -->
+        <section class="top-categories-section reveal">
+            <div class="container">
+                <h2 class="section-title">TOP CATEGORIES</h2>
+                <div class="top-categories-grid">
+                    <!-- Category 1: Headsets -->
+                    <a href="category.html" class="top-cat-card">
+                        <div class="top-cat-image">
+                            <img src="assets/Headphone.png" alt="Gaming Headsets">
+                        </div>
+                        <div class="top-cat-info">
+                            <span class="top-cat-name">GAMING HEADSETS</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Category 2: Microphones -->
+                    <a href="category.html" class="top-cat-card">
+                        <div class="top-cat-image">
+                            <img src="assets/MOUSE PAD.png" alt="Microphones">
+                        </div>
+                        <div class="top-cat-info">
+                            <span class="top-cat-name">MOUSEPADS</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Category 3: Keyboards -->
+                    <a href="category.html" class="top-cat-card">
+                        <div class="top-cat-image">
+                            <img src="assets/Keyboard 95.png" alt="Gaming Keyboards">
+                        </div>
+                        <div class="top-cat-info">
+                            <span class="top-cat-name">GAMING KEYBOARDS</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Category 4: Mice -->
+                    <a href="category.html" class="top-cat-card">
+                        <div class="top-cat-image">
+                            <img src="assets/Mice 600x600.png" alt="Gaming Mice">
+                        </div>
+                        <div class="top-cat-info">
+                            <span class="top-cat-name">GAMING MICE</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Launch Collection Section -->
+        <section class="launch-collection-section reveal">
+            <img src="assets/Karnage headphone (2).png" alt="Launch Collection" class="collection-bg">
+            <div class="collection-overlay"></div>
+            <div class="collection-content">
+                <h2 class="collection-header">KARNAGE LAUNCH COLLECTION</h2>
+                <p class="collection-body">FEEL THE FIRE</p>
+                <div class="collection-actions">
+                    <a href="#" class="collection-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#" class="collection-link">Buy <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Top Products Section -->
+        <section id="top-products" class="top-products-section reveal">
+            <div class="container">
+                <h2 class="section-title">TOP PRODUCTS</h2>
+                <div class="products-grid" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <!-- Product Card 1: Visage -->
+                    <div class="product-card" style="width: 300px; max-width: 100%;">
+                        <div class="product-image-container" style="background: #111; cursor: pointer;" onclick="window.location.href='product-keyboard-1.html'">
+                            <span class="badge-save">New</span>
+                            <img src="vissageassets/1.jpg" alt="Visage Keyboard" class="product-image" style="object-fit: contain;">
+                            <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="brand-label">KARNAGE</span>
+                            <h3 class="product-title">Visage Premium Gaming Keyboard</h3>
+                            <div class="price-container">
+                                <span class="current-price">₹12,999/-</span>
+                                <span class="original-price">M.R.P : ₹14,999</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="window.location.href='product-keyboard-1.html'">View Product</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2: Visage 95 -->
+                    <div class="product-card" style="width: 300px; max-width: 100%;">
+                        <div class="product-image-container" style="background: #111; cursor: pointer;" onclick="window.location.href='product-keyboard-2.html'">
+                            <span class="badge-save">Compact</span>
+                            <img src="vissagee95assets/1.jpg" alt="Visage 95 Keyboard" class="product-image" style="object-fit: contain;">
+                            <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <span class="brand-label">KARNAGE</span>
+                            <h3 class="product-title">Visage 95 Wireless Mechanical Keyboard</h3>
+                            <div class="price-container">
+                                <span class="current-price">₹3,999/-</span>
+                                <span class="original-price">M.R.P : ₹5,499</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="window.location.href='product-keyboard-2.html'">View Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index-original.html" class="footer-logo">
+                        <img src="assets/Karnage logo Orange (2).png" alt="Karnage Logo">
+                    </a>
+                    <p class="footer-description">We forge the ultimate weapons for digital warriors. Feel the fire,
+                        dominate the game.</p>
+                    <div class="system-status">
+                        <span class="status-dot"></span> All systems operational
+                    </div>
+                </div>
+                <div class="footer-links-wrapper">
+                    <div class="footer-column">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="category.html" class="footer-link">Categories</a>
+                        <a href="product.html" class="footer-link">Products</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="#" class="footer-link">Software</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="support.html" class="footer-link">Support</a>
+                        <a href="#" class="footer-link">Warranty</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="https://www.instagram.com/karnageindia/" target="_blank"
+                            class="footer-link">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61584941474076" target="_blank"
+                            class="footer-link">Facebook</a>
+                        <a href="https://x.com/KarnageIndia" target="_blank" class="footer-link">X (Twitter)</a>
+                        <a href="https://www.youtube.com/@KarnageIndia" target="_blank" class="footer-link">YouTube</a>
+                        <a href="https://www.reddit.com/user/KarnageIndia/" target="_blank"
+                            class="footer-link">Reddit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Karnage. All rights reserved</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Mini-Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="mini-cart-drawer" id="mini-cart">
+        <div class="cart-drawer-header">
+            <h3>YOUR CART <span class="drawer-count">(1)</span></h3>
+            <button class="close-drawer" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-drawer-items"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; text-align: center; color: #888;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 3rem; margin-bottom: 15px;"></i>
+            <p>Your cart is empty.</p>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>SUBTOTAL:</span>
+                <span class="total-amount">₹0</span>
+            </div>
+            <p class="shipping-msg">Shipping & taxes calculated at checkout</p>
+            <a href="cart.html" class="btn-view-cart">VIEW FULL CART</a>
+        </div>
+    </div>
+</body>
+
+</html>

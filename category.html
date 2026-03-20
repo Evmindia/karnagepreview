@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboards - Karnage Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <button class="mobile-menu-toggle" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo-container">
+                <a href="index-original.html" class="brand-logo">
+                    <img src="assets/Karnage logo Orange (2).png" alt="Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="index-original.html" class="nav-link">CATEGORIES <i
+                                class="fa-solid fa-chevron-down"></i></a>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SOFTWARE</a></li>
+                    <li class="nav-item"><a href="support.html" class="nav-link">SUPPORT</a></li>
+                    <li class="nav-item"><a href="blogs.html" class="nav-link">BLOGS</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="action-item account-dropdown-container">
+                    <a href="#" class="action-link"><i class="fa-regular fa-user"></i></a>
+                </div>
+                <div class="action-item cart-container">
+                    <a href="cart.html" class="action-link cart-link">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- WRAPPER FOR CATEGORY PAGE (White background applied here) -->
+    <div class="category-page-wrapper">
+
+        <!-- Breadcrumb -->
+        <nav class="category-breadcrumb">
+            <a href="index-original.html">Karnage</a> <span>&gt;</span> <a href="#">Products</a> <span>&gt;</span>
+            <span>Keyboards</span>
+        </nav>
+
+        <!-- Toolbars -->
+        <div class="category-toolbar">
+            <select class="toolbar-btn custom-select-filter" id="filter-sort">
+                <option value="default">Sort: Default</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+            </select>
+            <select class="toolbar-btn custom-select-filter" id="filter-connectivity">
+                <option value="all">Connectivity: All</option>
+                <option value="wireless">Wireless</option>
+                <option value="wired">Wired</option>
+            </select>
+            <select class="toolbar-btn custom-select-filter" id="filter-type">
+                <option value="all">Type: All</option>
+                <option value="keyboard">Keyboards</option>
+                <option value="mouse">Mice</option>
+                <option value="headset">Headsets</option>
+            </select>
+        </div>
+
+        <div class="category-results-count">
+            Showing 2 of 2 products
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="category-catalog-grid">
+
+            <!-- Promo Block -->
+            <div class="category-promo-banner">
+                <h2>Premium Keyboards</h2>
+                <p>Discover our latest Visage and Visage 95 keyboards, engineered to deliver ultimate precision and competitive performance.</p>
+            </div>
+
+            <!-- Product 1 -->
+            <a href="product-keyboard-1.html" class="category-item-card" data-price="12999" data-connectivity="wired" data-type="keyboard">
+                <span class="category-item-badge">New</span>
+                <button class="category-item-wishlist"><i class="fa-regular fa-heart"></i></button>
+                <div class="category-item-image-wrap">
+                    <img src="vissageassets/1.jpg" alt="Visage Keyboard">
+                </div>
+                <div class="category-item-colors">
+                    <span class="color-dot black"></span>
+                </div>
+                <h3 class="category-item-title">Visage</h3>
+                <p class="category-item-desc">Premium gaming performance and mechanical feedback...</p>
+                <span class="category-price" style="display:block; margin-top:10px; font-weight:700; color:var(--accent-color);">₹12,999</span>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="product-keyboard-2.html" class="category-item-card" data-price="3999" data-connectivity="wireless" data-type="keyboard">
+                <button class="category-item-wishlist"><i class="fa-regular fa-heart"></i></button>
+                <div class="category-item-image-wrap">
+                    <img src="vissagee95assets/1.jpg" alt="Visage 95 Keyboard">
+                </div>
+                <div class="category-item-colors">
+                    <span class="color-dot black"></span>
+                    <span class="color-dot graphite"></span>
+                </div>
+                <h3 class="category-item-title">Visage 95</h3>
+                <p class="category-item-desc">Compact form factor designed for competitive gamers...</p>
+                <span class="category-price" style="display:block; margin-top:10px; font-weight:700; color:var(--accent-color);">₹3,999</span>
+            </a>
+
+        </div>
+    </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index-original.html" class="footer-logo">
+                            <img src="assets/Karnage logo Orange (2).png" alt="Karnage Logo">
+                        </a>
+                        <p class="footer-description">We forge the ultimate weapons for digital warriors. Feel the fire, dominate the game.</p>
+                        <div class="system-status">
+                            <span class="status-dot"></span> All systems operational
+                        </div>
+                    </div>
+                    <div class="footer-links-wrapper">
+                        <div class="footer-column">
+                            <a href="about.html" class="footer-link">About Us</a>
+                            <a href="category.html" class="footer-link">Categories</a>
+                            <a href="product.html" class="footer-link">Products</a>
+                            <a href="#" class="footer-link">Contact</a>
+                            <a href="#" class="footer-link">Blog</a>
+                        </div>
+                        <div class="footer-column">
+                            <a href="#" class="footer-link">Software</a>
+                            <a href="#" class="footer-link">FAQ</a>
+                            <a href="#" class="footer-link">Support</a>
+                            <a href="#" class="footer-link">Warranty</a>
+                        </div>
+                        <div class="footer-column">
+                            <a href="https://www.instagram.com/karnageindia/" target="_blank" class="footer-link">Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=61584941474076" target="_blank" class="footer-link">Facebook</a>
+                            <a href="https://x.com/KarnageIndia" target="_blank" class="footer-link">X (Twitter)</a>
+                            <a href="https://www.youtube.com/@KarnageIndia" target="_blank" class="footer-link">YouTube</a>
+                            <a href="https://www.reddit.com/user/KarnageIndia/" target="_blank" class="footer-link">Reddit</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; 2024 Karnage. All rights reserved</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
