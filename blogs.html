@@ -20,15 +20,14 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <div class="logo-container">
-                <a href="index-original.html" class="brand-logo">
+                <a href="index.html" class="brand-logo">
                     <img src="assets/Karnage logo Orange (2).png" alt="Logo">
                 </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item has-dropdown">
-                        <a href="index-original.html" class="nav-link">CATEGORIES <i
-                                class="fa-solid fa-chevron-down"></i></a>
+                        <a href="index.html" class="nav-link">CATEGORIES <i class="fa-solid fa-chevron-down"></i></a>
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">SOFTWARE</a></li>
@@ -50,21 +49,31 @@
         </div>
     </header>
 
-    <div class="blogs-container" style="padding: 100px 20px; max-width: 1200px; margin: 0 auto; color: #fff; min-height: 60vh;">
-        <h1 style="color: var(--accent-color); margin-bottom: 40px; text-align: center; font-size: 36px;">Karnage Content Hub</h1>
-        
-        <div class="add-blog-section" style="margin-bottom: 50px; background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #222; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div class="blogs-container"
+        style="padding: 100px 20px; max-width: 1200px; margin: 0 auto; color: #fff; min-height: 60vh;">
+        <h1 style="color: var(--accent-color); margin-bottom: 40px; text-align: center; font-size: 36px;">Karnage
+            Content Hub</h1>
+
+        <div class="add-blog-section"
+            style="margin-bottom: 50px; background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #222; max-width: 800px; margin-left: auto; margin-right: auto;">
             <h3 style="margin-top: 0; margin-bottom: 15px; font-weight: 500;">Add a Blog URL link</h3>
-            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Paste any blog URL below to auto-fetch its title and first image.</p>
+            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Paste any blog URL below to auto-fetch its
+                title and first image.</p>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <input type="text" id="blog-url-input" placeholder="https://example.com/some-blog-post..." style="flex: 1; padding: 12px 15px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-family: 'Outfit';">
-                <button id="add-blog-btn" class="btn-primary" style="padding: 12px 25px; border: none; cursor: pointer; border-radius: 4px;">Fetch Blog Post</button>
+                <input type="text" id="blog-url-input" placeholder="https://example.com/some-blog-post..."
+                    style="flex: 1; padding: 12px 15px; background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 4px; font-family: 'Outfit';">
+                <button id="add-blog-btn" class="btn-primary"
+                    style="padding: 12px 25px; border: none; cursor: pointer; border-radius: 4px;">Fetch Blog
+                    Post</button>
             </div>
-            <p id="blog-status" style="margin-top: 15px; font-size: 0.9em; color: var(--accent-color); transition: opacity 0.3s; height: 1em;"></p>
+            <p id="blog-status"
+                style="margin-top: 15px; font-size: 0.9em; color: var(--accent-color); transition: opacity 0.3s; height: 1em;">
+            </p>
         </div>
 
         <!-- Rendered blogs will appear here -->
-        <div class="blogs-grid" id="blogs-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
+        <div class="blogs-grid" id="blogs-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
             <!-- Blog cards injected via Javascript -->
         </div>
     </div>
@@ -74,10 +83,11 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="index-original.html" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
                         <img src="assets/Karnage logo Orange (2).png" alt="Karnage Logo">
                     </a>
-                    <p class="footer-description">We forge the ultimate weapons for digital warriors. Feel the fire, dominate the game.</p>
+                    <p class="footer-description">We forge the ultimate weapons for digital warriors. Feel the fire,
+                        dominate the game.</p>
                     <div class="system-status">
                         <span class="status-dot"></span> All systems operational
                     </div>
@@ -97,11 +107,14 @@
                         <a href="#" class="footer-link">Warranty</a>
                     </div>
                     <div class="footer-column">
-                        <a href="https://www.instagram.com/karnageindia/" target="_blank" class="footer-link">Instagram</a>
-                        <a href="https://www.facebook.com/profile.php?id=61584941474076" target="_blank" class="footer-link">Facebook</a>
+                        <a href="https://www.instagram.com/karnageindia/" target="_blank"
+                            class="footer-link">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61584941474076" target="_blank"
+                            class="footer-link">Facebook</a>
                         <a href="https://x.com/KarnageIndia" target="_blank" class="footer-link">X (Twitter)</a>
                         <a href="https://www.youtube.com/@KarnageIndia" target="_blank" class="footer-link">YouTube</a>
-                        <a href="https://www.reddit.com/user/KarnageIndia/" target="_blank" class="footer-link">Reddit</a>
+                        <a href="https://www.reddit.com/user/KarnageIndia/" target="_blank"
+                            class="footer-link">Reddit</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +136,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // An array for pre-loaded links (optional)
             const blogLinks = [];
-            
+
             const grid = document.getElementById('blogs-grid');
             const addBtn = document.getElementById('add-blog-btn');
             const urlInput = document.getElementById('blog-url-input');
@@ -131,10 +144,10 @@
 
             function fetchBlogData(url) {
                 statusText.textContent = 'Fetching metadata...';
-                
+
                 // Use AllOrigins as a reliable public CORS proxy to fetch foreign content metadata
                 const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
-                
+
                 fetch(proxyUrl)
                     .then(response => {
                         if (response.ok) return response.json();
@@ -144,11 +157,11 @@
                         const html = data.contents;
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, 'text/html');
-                        
+
                         // Try to find Open Graph image or a generic image
                         const ogImage = doc.querySelector('meta[property="og:image"]');
                         const imgUrl = ogImage ? ogImage.getAttribute('content') : 'https://placehold.co/600x400/0f1923/e3793e?text=No+Preview+Image';
-                        
+
                         // Find a reasonable Title
                         const titleTag = doc.querySelector('title');
                         const ogTitle = doc.querySelector('meta[property="og:title"]');
@@ -162,7 +175,7 @@
                         else if (metaDesc) descText = metaDesc.getAttribute('content');
 
                         createBlogCard(url, imgUrl, title, descText);
-                        
+
                         statusText.textContent = 'Blog added successfully!';
                         setTimeout(() => statusText.textContent = '', 3000);
                     })
@@ -178,10 +191,10 @@
                 const card = document.createElement('a');
                 card.href = link;
                 card.target = "_blank";
-                
+
                 // Use inline styles to match site theme dynamically
                 card.style.cssText = "display: flex; flex-direction: column; background: #0a0a0a; border: 1px solid #222; border-radius: 8px; overflow: hidden; text-decoration: none; color: #fff; transition: transform 0.2s, box-shadow 0.2s;";
-                
+
                 card.onmouseenter = () => {
                     card.style.transform = "translateY(-5px)";
                     card.style.boxShadow = "0 10px 20px rgba(227, 121, 62, 0.1)";
@@ -203,7 +216,7 @@
                         <div style="margin-top: auto; font-size: 14px; color: var(--accent-color); font-weight: 600;">Read Full Article &rarr;</div>
                     </div>
                 `;
-                
+
                 // Prepend so newest is first
                 grid.prepend(card);
             }
