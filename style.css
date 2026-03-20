@@ -3386,3 +3386,37 @@ select.custom-select-filter option {
         padding: 40px 20px;
     }
 }
+
+/* --- Mobile Hero Slider Fixes --- */
+@media screen and (max-width: 768px) {
+    .hero-slider-full {
+        aspect-ratio: 9 / 16;
+        height: auto;
+    }
+    .bg-mobile {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .slide-full {
+        align-items: flex-start;
+        padding-top: 150px; /* Push down to fit above keyboard but below header */
+        padding-bottom: 0;
+    }
+    .slide-content-full {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .slide-content-full .slide-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+    .slider-dots-full {
+        bottom: 25px;
+    }
+}
