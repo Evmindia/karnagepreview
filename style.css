@@ -397,7 +397,7 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    height: 75%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -468,7 +468,7 @@ ul {
 /* Dots for Full Width Slider */
 .slider-dots-full {
     position: absolute;
-    bottom: 30%;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -938,7 +938,7 @@ ul {
 
 /* Top Categories Section */
 .top-categories-section {
-    padding: 80px 40px;
+    padding: 40px 40px;
     background-color: var(--primary-bg);
     /* Keep main bg dark */
 }
