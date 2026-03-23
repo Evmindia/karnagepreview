@@ -90,6 +90,43 @@
         .faq-answer p {
             margin-bottom: 10px;
         }
+        .whats-in-box-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .whats-in-box-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 160px;
+        }
+
+        @media (max-width: 768px) {
+            .whats-in-box-grid {
+                gap: 20px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .whats-in-box-item {
+                width: 100%;
+            }
+            .whats-in-box-item .icon-circle {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5rem !important;
+            }
+            .whats-in-box-item .item-text {
+                font-size: 0.9rem !important;
+            }
+            .whats-in-box-section h2 {
+                font-size: 1.8rem !important;
+                margin-bottom: 30px !important;
+            }
+        }
     </style>
 </head>
 
@@ -244,10 +281,11 @@
                         <button class="btn-upsell-add"><i class="fa-solid fa-plus"></i> ADD</button>
                     </div>
                 </div>
+                -->
 
             </div>
         </div>
-    </div> -->
+    </div>
 
                 <!-- What's In The Box Section -->
                 <div class="whats-in-box-section"
@@ -255,47 +293,43 @@
                     <h2
                         style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 50px; letter-spacing: 1px; text-transform: uppercase;">
                         What's included in the box</h2>
-                    <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
+                    <div class="whats-in-box-grid">
 
-                        <div
-                            style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 160px;">
-                            <div
+                        <div class="whats-in-box-item">
+                            <div class="icon-circle"
                                 style="width: 80px; height: 80px; border-radius: 50%; background: #111; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--text-color); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                                 <i class="fa-solid fa-keyboard"></i>
                             </div>
-                            <span style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">The Visage
+                            <span class="item-text" style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">The Visage
                                 Keyboard</span>
                         </div>
 
-                        <div
-                            style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 160px;">
-                            <div
+                        <div class="whats-in-box-item">
+                            <div class="icon-circle"
                                 style="width: 80px; height: 80px; border-radius: 50%; background: #111; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--text-color); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                                 <i class="fa-brands fa-usb"></i>
                             </div>
-                            <span style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">Type-C
+                            <span class="item-text" style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">Type-C
                                 Charging
                                 Cable</span>
                         </div>
 
-                        <div
-                            style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 160px;">
-                            <div
+                        <div class="whats-in-box-item">
+                            <div class="icon-circle"
                                 style="width: 80px; height: 80px; border-radius: 50%; background: #111; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--text-color); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                                 <i class="fa-solid fa-wifi"></i>
                             </div>
-                            <span style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">2.4G
+                            <span class="item-text" style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">2.4G
                                 Wireless
                                 Receiver</span>
                         </div>
 
-                        <div
-                            style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 160px;">
-                            <div
+                        <div class="whats-in-box-item">
+                            <div class="icon-circle"
                                 style="width: 80px; height: 80px; border-radius: 50%; background: #111; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--text-color); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                                 <i class="fa-solid fa-book-open"></i>
                             </div>
-                            <span style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">User
+                            <span class="item-text" style="font-size: 1rem; font-weight: 600; color: #eee; line-height: 1.4;">User
                                 Manual</span>
                         </div>
 
