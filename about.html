@@ -571,29 +571,30 @@
                                     <div class="category-grid">
                                         <a href="gaming-keyboards/" class="category-card">
                                             <div class="cat-image-wrapper">
-                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Keyboards"
+                                                <img src="headerimages/Visage Gray background.jpg (2).jpeg"
                                                     alt="Keyboards" class="cat-img">
                                             </div>
                                             <span class="cat-title">Keyboards</span>
                                         </a>
                                         <a href="gaming-mice/" class="category-card">
                                             <div class="cat-image-wrapper">
-                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Mice" alt="Mice"
-                                                    class="cat-img">
+                                                <img src="headerimages/Blink.jpg.jpeg" alt="Mice" class="cat-img">
                                             </div>
                                             <span class="cat-title">Mouse</span>
                                         </a>
                                         <a href="mousepads/" class="category-card">
                                             <div class="cat-image-wrapper">
-                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Apparel"
-                                                    alt="Mousepads" class="cat-img"> <!-- User said Mousepad -->
+                                                <img src="headerimages/Mouse pad.jpg (1).jpeg" alt="Mousepads"
+                                                    class="cat-img">
+                                                <!-- User said Mousepad -->
                                             </div>
                                             <span class="cat-title">Mousepads</span>
                                         </a>
                                         <a href="gaming-headsets/" class="category-card">
                                             <div class="cat-image-wrapper">
-                                                <img src="https://placehold.co/300x300/1a1a1a/FFF?text=Audio"
-                                                    alt="Headsets" class="cat-img"> <!-- User said Headset -->
+                                                <img src="headerimages/Headphone.jpg.jpeg" alt="Headsets"
+                                                    class="cat-img">
+                                                <!-- User said Headset -->
                                             </div>
                                             <span class="cat-title">Headsets</span>
                                         </a>
@@ -911,6 +912,47 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Intersection Observer for Scroll Reveal Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, revealOptions);
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+    <!-- Mini-Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="mini-cart-drawer" id="mini-cart">
+        <div class="cart-drawer-header">
+            <h3>YOUR CART <span class="drawer-count">(1)</span></h3>
+            <button class="close-drawer" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-drawer-items"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; text-align: center; color: #888;">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 3rem; margin-bottom: 15px;"></i>
+            <p>Your cart is empty.</p>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>SUBTOTAL:</span>
+                <span class="total-amount">₹0</span>
+            </div>
+            <p class="shipping-msg">Shipping & taxes calculated at checkout</p>
+            <a href="cart.html" class="btn-view-cart">VIEW FULL CART</a>
+        </div>
+    </div>
 </body>
 
 </html>
