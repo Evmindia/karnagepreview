@@ -948,6 +948,80 @@ ul {
     margin: 0 auto;
 }
 
+.section-tagline {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.section-tagline strong {
+    font-size: 2.8rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.section-tagline span {
+    font-size: 1rem;
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Showcase Grid */
+.showcase-grid-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.showcase-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(227, 121, 62, 0.2);
+}
+
+.showcase-item img,
+.showcase-rectangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.showcase-item:hover img,
+.showcase-rectangle:hover img {
+    transform: scale(1.05);
+}
+
+.showcase-rectangle {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(227, 121, 62, 0.2);
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .showcase-grid-top {
+        grid-template-columns: 1fr;
+    }
+    .showcase-rectangle {
+        aspect-ratio: 16 / 9;
+        margin-bottom: 40px;
+    }
+}
+
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -957,6 +1031,11 @@ ul {
     color: #ffffff;
     letter-spacing: 1px;
 }
+
+.top-categories-section .section-title {
+    margin-top: 60px;
+}
+
 
 .top-categories-grid {
     display: grid;
@@ -1008,18 +1087,25 @@ ul {
     text-transform: uppercase;
     color: #ffffff;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
 .top-cat-info i {
     font-size: 0.9rem;
     color: #ffffff;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .top-cat-card:hover .top-cat-info i {
     transform: translateX(5px) translateY(-5px);
     /* Diagonal move hint */
 }
+
+.top-cat-card:hover .top-cat-name,
+.top-cat-card:hover .top-cat-info i {
+    color: var(--accent-color);
+}
+
 
 /* Responsive adjustments for Top Categories */
 @media (max-width: 1024px) {
@@ -1516,6 +1602,14 @@ body.no-scroll {
 .add-to-cart-btn:hover {
     background: #ffffff;
     transform: translateY(-2px);
+}
+
+.btn-disabled {
+    background: #333 !important;
+    color: #888 !important;
+    cursor: default !important;
+    transform: none !important;
+    pointer-events: none !important;
 }
 
 .btn-options {
