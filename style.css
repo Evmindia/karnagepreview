@@ -1723,6 +1723,66 @@ body.no-scroll {
     border-color: #fff;
 }
 
+/* Price Slider Component */
+.price-slider-wrap {
+    background: var(--secondary-bg);
+    border: 1px solid #333;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 220px;
+    transition: all 0.2s;
+}
+
+.price-slider-wrap:hover {
+    border-color: var(--text-color);
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.price-labels span:last-child {
+    color: var(--accent-color);
+}
+
+.premium-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #444;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.premium-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(227, 121, 62, 0.4);
+    transition: transform 0.2s;
+}
+
+.premium-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+}
+
+.filter-dropdown {
+    height: 100%;
+}
+
 /* Results Count */
 .category-results-count {
     max-width: 1400px;
@@ -2729,8 +2789,9 @@ body.no-scroll {
 
 /* Custom Select Filter Styles */
 select.custom-select-filter {
-    appearance: none;
     -webkit-appearance: none;
+    appearance: none;
+    padding: 8px 30px 8px 16px !important;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
     background-repeat: no-repeat;

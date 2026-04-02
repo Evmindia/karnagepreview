@@ -35,25 +35,25 @@
                                 <div class="category-grid">
                                     <a href="../gaming-keyboards/" class="category-card">
                                         <div class="cat-image-wrapper">
-                                            <img src="../assets/keyboardheader.png" alt="Keyboards" class="cat-img">
+                                            <img src="../assets/Gray background Visage.jpg.jpeg" alt="Keyboards" class="cat-img">
                                         </div>
                                         <span class="cat-title">Keyboards</span>
                                     </a>
                                     <a href="../gaming-mice/" class="category-card">
                                         <div class="cat-image-wrapper">
-                                            <img src="../assets/mouseheader.png" alt="Mice" class="cat-img">
+                                            <img src="../mouseassets/Blink/Blink - White.jpg" alt="Mice" class="cat-img">
                                         </div>
                                         <span class="cat-title">Mouse</span>
                                     </a>
                                     <a href="../mousepads/" class="category-card">
                                         <div class="cat-image-wrapper">
-                                            <img src="../assets/mousepadheader.png" alt="Mousepads" class="cat-img">
+                                            <img src="../Mousepad Image/Mousepad - M.jpg" alt="Mousepads" class="cat-img">
                                         </div>
                                         <span class="cat-title">Mousepads</span>
                                     </a>
                                     <a href="../gaming-headsets/" class="category-card">
                                         <div class="cat-image-wrapper">
-                                            <img src="../assets/Headphone.png" alt="Headsets" class="cat-img">
+                                            <img src="../assets/headsets/Headphone.jpg" alt="Headsets" class="cat-img">
                                         </div>
                                         <span class="cat-title">Headsets</span>
                                     </a>
@@ -92,21 +92,29 @@
 
         <!-- Toolbars -->
         <div class="category-toolbar">
+            <!-- Price Slider Filter -->
+            <div class="price-slider-wrap">
+                <div class="price-labels">
+                    <span>Price Range:</span>
+                    <span id="price-range-label">₹0 - ₹5,000</span>
+                </div>
+                <input type="range" min="0" max="5000" step="100" value="5000" class="premium-slider" id="price-range-slider"
+                    oninput="document.getElementById('price-range-label').innerText = '₹0 - ₹' + parseInt(this.value).toLocaleString()">
+            </div>
+
+            <!-- Mousepad Size Dropdown -->
+            <select class="toolbar-btn custom-select-filter" id="filter-mousepad-size">
+                <option value="all">Product: Mousepads</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xxl">XX Large</option>
+            </select>
+
+            <!-- Sort Dropdown (Keep but style consistent) -->
             <select class="toolbar-btn custom-select-filter" id="filter-sort">
-                <option value="default">Sort: Default</option>
+                <option value="default" disabled selected>Sort: Default</option>
                 <option value="price-asc">Price: Low to High</option>
                 <option value="price-desc">Price: High to Low</option>
-            </select>
-            <select class="toolbar-btn custom-select-filter" id="filter-connectivity">
-                <option value="all">Connectivity: All</option>
-                <option value="wireless">Wireless</option>
-                <option value="wired">Wired</option>
-            </select>
-            <select class="toolbar-btn custom-select-filter" id="filter-type">
-                <option value="all">Type: All</option>
-                <option value="keyboard">Keyboards</option>
-                <option value="mouse">Mice</option>
-                <option value="headset">Headsets</option>
             </select>
         </div>
 
