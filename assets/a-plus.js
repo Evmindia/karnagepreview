@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             currentIndex = index;
             
-            // On mobile, scroll the active tab into view
-            tabs[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            // On mobile, scroll the active tab into view (Disabled as it causes page jump on load)
+            // tabs[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         }
 
         tabs.forEach((tab, index) => {

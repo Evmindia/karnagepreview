@@ -4,7 +4,7 @@ import os
 keyboards_img = "assets/Gray background Visage.jpg.jpeg"
 mouse_img = "mouseassets/Blink/Blink - White.jpg"
 mousepads_img = "Mousepad Image/Mousepad - M.jpg"
-headsets_img = "assets/headsets/Headphone.jpg"
+headsets_img = "assets/headsets/Headset.jpg"
 
 root_dir = r"e:\karnage\karnage normal"
 

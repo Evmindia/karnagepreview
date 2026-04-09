@@ -234,11 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const catalogGrid = document.querySelector('.category-catalog-grid');
     const filterSort = document.getElementById('filter-sort');
-    const filterConnectivity = document.getElementById('filter-connectivity');
     const filterType = document.getElementById('filter-type');
+    const priceSlider = document.getElementById('price-range-slider');
     const resultsCount = document.querySelector('.category-results-count');
 
-    if (catalogGrid && filterSort) {
+    if (catalogGrid && (filterSort || filterType || priceSlider)) {
         const products = Array.from(catalogGrid.querySelectorAll('.category-item-card'));
         const promoBanner = catalogGrid.querySelector('.category-promo-banner');
 
@@ -247,22 +247,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function updateCatalog() {
-            const sortVal = filterSort.value;
-            const connVal = filterConnectivity.value;
-            const typeVal = filterType.value;
+            const sortVal = filterSort ? filterSort.value : 'default';
+            const typeVal = filterType ? filterType.value : 'all';
+            const maxPrice = priceSlider ? parseInt(priceSlider.value) : Infinity;
 
             let visibleCount = 0;
 
             let filteredProducts = products.filter(card => {
-                const cardConn = card.getAttribute('data-connectivity');
                 const cardType = card.getAttribute('data-type');
+                const cardPrice = parseInt(card.getAttribute('data-price')) || 0;
                 
-                const matchConn = (connVal === 'all') || (cardConn === connVal);
                 const matchType = (typeVal === 'all') || (cardType === typeVal);
+                const matchPrice = cardPrice <= maxPrice;
                 
-                return matchConn && matchType;
+                return matchType && matchPrice;
             });
 
+            // Sorting
             if (sortVal === 'price-asc') {
                 filteredProducts.sort((a, b) => parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price')));
             } else if (sortVal === 'price-desc') {
@@ -271,12 +272,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 filteredProducts.sort((a, b) => parseInt(a.getAttribute('data-index')) - parseInt(b.getAttribute('data-index')));
             }
 
+            // Remove existing cards
             products.forEach(card => card.remove());
 
-            if (promoBanner) {
-                catalogGrid.appendChild(promoBanner);
-            }
-
+            // Re-append in order
             filteredProducts.forEach(card => {
                 catalogGrid.appendChild(card);
                 visibleCount++;
@@ -287,11 +286,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        filterSort.addEventListener('change', updateCatalog);
-        filterConnectivity.addEventListener('change', updateCatalog);
-        filterType.addEventListener('change', updateCatalog);
+        // Apply hash-based filtering on load
+        function applyHashFilter() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && filterType) {
+                const validOptions = Array.from(filterType.options).map(opt => opt.value);
+                if (validOptions.includes(hash)) {
+                    filterType.value = hash;
+                }
+            }
+            updateCatalog();
+        }
+
+        if (filterSort) filterSort.addEventListener('change', updateCatalog);
+        if (filterType) filterType.addEventListener('change', updateCatalog);
+        if (priceSlider) priceSlider.addEventListener('input', updateCatalog);
         
-        updateCatalog();
+        // Listen for hash changes
+        window.addEventListener('hashchange', applyHashFilter);
+
+        // Initial apply
+        applyHashFilter();
     }
 });
 

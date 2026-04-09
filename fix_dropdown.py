@@ -30,7 +30,7 @@ dropdown_html = """<li class="nav-item has-dropdown">
                                     </a>
                                     <a href="category.html" class="category-card">
                                         <div class="cat-image-wrapper">
-                                            <img src="assets/Headphone.png" alt="Headsets" class="cat-img">
+                                            <img src="assets/Headset.png" alt="Headsets" class="cat-img">
                                         </div>
                                         <span class="cat-title">Headsets</span>
                                     </a>
