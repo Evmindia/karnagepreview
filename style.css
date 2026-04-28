@@ -1049,12 +1049,22 @@ ul {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 50px;
     text-transform: uppercase;
     color: #ffffff;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+.top-products-section .section-title {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .top-categories-section .section-title {
@@ -1145,8 +1155,9 @@ ul {
     }
 
     .section-tagline strong {
-        font-size: clamp(1rem, 4.5vw, 1.4rem);
-        white-space: nowrap;
+        font-size: clamp(1rem, 4.5vw, 1.6rem);
+        white-space: normal;
+        word-break: break-word;
         display: block;
     }
 
@@ -1162,14 +1173,23 @@ ul {
 
 
     .section-title {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+        font-weight: 800;
         margin-bottom: 25px;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        white-space: normal;
+        word-break: break-word;
     }
 
     .top-products-section .section-title {
-        font-size: 1rem;
-        white-space: nowrap;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
     }
 
     .top-categories-grid {
@@ -1331,7 +1351,7 @@ ul {
     }
 
     .collection-header {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 800;
         letter-spacing: 1px;
         margin-bottom: 5px;
@@ -1469,12 +1489,9 @@ body.no-scroll {
     /* Dark bg */
 }
 
-.top-products-section .section-title {
-    text-align: left;
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-weight: 800;
+.top-products-section .container {
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .products-grid {
@@ -1545,7 +1562,7 @@ body.no-scroll {
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 700;
-    z-index: 2;
+    z-index: 10;
 }
 
 .wishlist-btn {
@@ -1557,7 +1574,7 @@ body.no-scroll {
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
-    z-index: 2;
+    z-index: 10;
     transition: color 0.3s ease;
 }
 
@@ -1571,7 +1588,7 @@ body.no-scroll {
     right: 15px;
     width: 60px;
     height: 60px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .shark-approved img {
@@ -1594,7 +1611,7 @@ body.no-scroll {
     display: flex;
     align-items: center;
     gap: 5px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .rating-badge i {
@@ -1708,15 +1725,25 @@ body.no-scroll {
 }
 
 @media (max-width: 600px) {
+    .top-products-section {
+        padding: 50px 15px;
+        overflow: hidden;
+    }
+
+    .top-products-section .container {
+        overflow: hidden;
+    }
+
     .products-grid {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
-        gap: 15px;
+        gap: 12px;
         padding-bottom: 25px;
+        padding-left: 2px;
+        padding-right: 2px;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        padding-left: 5px;
     }
 
     .products-grid::-webkit-scrollbar {
@@ -1734,12 +1761,38 @@ body.no-scroll {
     }
 
     .product-card {
-        flex: 0 0 280px;
+        flex: 0 0 calc(75vw);
+        max-width: 260px;
         scroll-snap-align: start;
+        min-width: 0;
     }
 
-    .top-products-section {
-        padding: 60px 15px;
+    .product-title {
+        font-size: 0.9rem;
+        height: auto;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        white-space: normal;
+    }
+
+    .current-price {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .original-price {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .price-container {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .add-to-cart-btn {
+        padding: 12px;
+        font-size: 0.85rem;
     }
 }
 
