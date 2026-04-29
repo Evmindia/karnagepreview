@@ -493,18 +493,59 @@
         }
 
         @media screen and (max-width: 768px) {
+            .hero-section {
+                padding: 60px 15px 30px;
+                min-height: 60vh;
+            }
+
+            .ka-section {
+                padding: 60px 15px;
+            }
+
+            .philosophy-section {
+                padding: 80px 15px;
+            }
+
+            .closing-section {
+                padding: 80px 15px 100px;
+            }
+
             .hero-title {
-                font-size: 3rem;
-                letter-spacing: 2px;
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+
+            .hero-body {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
 
             .section-heading {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .section-text {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
 
             .eco-cards {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .eco-card {
+                padding: 25px 20px;
+            }
+
+            .eco-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .eco-card p {
+                font-size: 0.85rem;
             }
 
             .eco-card:nth-child(2),
@@ -514,7 +555,7 @@
 
             .eco-card:nth-child(2):hover,
             .eco-card:nth-child(4):hover {
-                transform: translateY(-10px);
+                transform: translateY(-5px);
             }
 
             .ph-icons-wrapper {
@@ -522,17 +563,34 @@
                 flex-direction: column;
             }
 
+            .ph-statment {
+                font-size: 1.5rem;
+                margin: 30px 0;
+            }
+
             .closing-rules {
-                padding-left: 20px;
+                padding-left: 0;
                 border-left: none;
+                margin-top: 30px;
             }
 
             .closing-rules p {
                 text-align: center;
+                font-size: 1rem;
+                margin-bottom: 15px;
             }
 
             .hashtag {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .dna-item {
+                padding: 15px 20px;
+            }
+
+            .dna-item span {
+                font-size: 1rem;
             }
         }
     </style>
@@ -757,15 +815,15 @@
 
                     <div class="ph-icons-wrapper">
                         <div class="ph-icon">
-                            <i class="fa-solid fa-computer-mouse"></i>
+                            <img src="assets/Mice.png" alt="Instinct" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
                             <span>Instinct</span>
                         </div>
                         <div class="ph-icon">
-                            <i class="fa-solid fa-keyboard"></i>
+                            <img src="assets/Keyboard.png" alt="Control" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
                             <span>Control</span>
                         </div>
                         <div class="ph-icon">
-                            <i class="fa-solid fa-headsets"></i>
+                            <img src="assets/Headset.png" alt="Immersion" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
                             <span>Immersion</span>
                         </div>
                     </div>

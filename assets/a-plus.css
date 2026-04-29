@@ -248,21 +248,33 @@
     .tab-item { font-size: 0.8rem; }
 
     .numbered-tabs-container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        overflow-x: auto;
+        padding: 20px;
+        gap: 10px;
+        scrollbar-width: none;
+        justify-content: center;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+    }
+
+    .numbered-tabs-container::-webkit-scrollbar {
         display: none;
+    }
+
+    .numbered-tab {
+        min-width: 140px;
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        gap: 8px;
     }
 
     .feature-switcher-numbered {
         flex-direction: column;
-    }
-
-    .numbered-tab {
-        padding: 8px 15px;
-        min-width: auto;
-        font-size: 0.8rem;
-    }
-
-    .numbered-tab.active {
-        transform: translateY(-5px);
     }
 
     .numbered-overlay {
@@ -271,10 +283,11 @@
         top: 0;
         transform: none;
         max-width: 100%;
-        padding: 40px 20px;
+        padding: 30px 20px;
         order: 1;
         text-align: center;
     }
 
-    .numbered-overlay h2 { font-size: 1.8rem; }
+    .numbered-overlay h2 { font-size: 1.6rem; }
+    .numbered-overlay p { font-size: 0.85rem; }
 }

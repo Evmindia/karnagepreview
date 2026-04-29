@@ -329,29 +329,32 @@ details[open] .header__icon--search span .svg-wrapper:first-child {
 @media (max-width: 768px) {
     .header-container {
         /* Mobile Layout: Hamburger (Left) - Logo (Center) - Actions (Right) */
-        justify-content: space-between;
-        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
     }
 
     .mobile-menu-toggle {
         display: block;
-        order: 1;
-        /* Left */
         z-index: 101;
-        /* Above drawer if needed */
+        justify-self: start;
     }
 
     .logo-container {
-        order: 2;
-        /* Center */
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        min-width: 0;
+        width: 100%;
+        padding: 0 5px;
     }
 
     .user-actions {
-        order: 3;
-        /* Right */
+        gap: 8px;
+        /* Optimize gap further for very small screens */
+        justify-self: end;
+        margin-left: auto;
     }
 
     /* Hide Desktop Nav */
@@ -421,11 +424,21 @@ details[open] .header__icon--search span .svg-wrapper:first-child {
         gap: 15px;
     }
 
+    .brand-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 0;
+        max-width: 100%;
+    }
+
     /* Logo Sizing */
     .brand-logo img {
         height: 30px;
         /* Smaller logo for mobile */
         width: auto;
+        max-width: 100%;
+        object-fit: contain;
     }
 
     /* Mobile Overlay */
