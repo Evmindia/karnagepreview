@@ -122,7 +122,10 @@
             <h1 class="reveal">Welcome to Karnage Support</h1>
             <div class="support-search-container reveal">
                 <i class="fa-solid fa-magnifying-glass support-search-icon"></i>
-                <input type="text" class="support-search-input" placeholder="How can we help you?">
+                <input type="text" class="support-search-input" id="support-search" placeholder="How can we help you?">
+                <div class="search-suggestions" id="search-suggestions">
+                    <!-- Suggestions will be injected here -->
+                </div>
             </div>
         </section>
 
@@ -145,7 +148,7 @@
                         <i class="fa-solid fa-headset support-cat-icon"></i>
                         <span class="support-cat-name">Headsets</span>
                     </a>
-                    <a href="#" class="support-cat-card reveal">
+                    <a href="mousepads/" class="support-cat-card reveal">
                         <i class="fa-solid fa-square-full support-cat-icon"></i>
                         <span class="support-cat-name">Mousepads</span>
                     </a>
@@ -226,7 +229,7 @@
                     <div class="footer-column">
                         <a href="https://www.instagram.com/karnageindia/" target="_blank"
                             class="footer-link">Instagram</a>
-                        <a href="https://www.facebook.com/profile.php?id=61584941474076" target="_blank"
+                        <a href="https://www.facebook.com/share/1McWytgKJR/" target="_blank"
                             class="footer-link">Facebook</a>
                         <a href="https://x.com/KarnageIndia" target="_blank" class="footer-link">X (Twitter)</a>
                         <a href="https://www.youtube.com/@KarnageIndia" target="_blank" class="footer-link">YouTube</a>
@@ -247,8 +250,62 @@
 
     <script src="script.js"></script>
     <script>
-        // Intersection Observer for Scroll Reveal Animations
+        // Support Search Logic
         document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('support-search');
+            const suggestionsBox = document.getElementById('search-suggestions');
+
+            const supportData = [
+                { name: "Visage", category: "Keyboard", url: "support/visage/", image: "vissageassets/1.jpg" },
+                { name: "Visage 95", category: "Keyboard", url: "support/visage95/", image: "vissagee95assets/1.jpg" },
+                { name: "Blink", category: "Mouse", url: "support/blink/", image: "mouseassets/Blink/Blink - White.jpg" },
+                { name: "Templar", category: "Mouse", url: "support/templar/", image: "mouseassets/Templar/Templar - Black.jpg" },
+                { name: "Inferno", category: "Mouse", url: "support/inferno/", image: "mouseassets/Inferno/Inferno - Black.jpg" },
+                { name: "Velocity", category: "Headset", url: "support/velocity/", image: "assets/headsets/Headset.jpg" },
+                { name: "Swift Mousepad", category: "Mousepad", url: "mousepads/", image: "assets/mousepads/swift-mousepad.png" }
+            ];
+
+            searchInput.addEventListener('input', (e) => {
+                const value = e.target.value.toLowerCase().trim();
+                
+                if (value.length < 2) {
+                    suggestionsBox.classList.remove('active');
+                    return;
+                }
+
+                const filtered = supportData.filter(item => 
+                    item.name.toLowerCase().includes(value) || 
+                    item.category.toLowerCase().includes(value)
+                );
+
+                renderSuggestions(filtered);
+            });
+
+            function renderSuggestions(results) {
+                if (results.length === 0) {
+                    suggestionsBox.innerHTML = '<div class="no-results">No products found. Try "keyboard" or "mouse".</div>';
+                } else {
+                    suggestionsBox.innerHTML = results.map(item => `
+                        <a href="${item.url}" class="suggestion-item">
+                            <img src="${item.image}" class="suggestion-img" alt="${item.name}">
+                            <div class="suggestion-info">
+                                <span class="suggestion-name">${item.name}</span>
+                                <span class="suggestion-category">${item.category}</span>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+                suggestionsBox.classList.add('active');
+            }
+
+            // Close suggestions when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                    suggestionsBox.classList.remove('active');
+                }
+            });
+
+            // Intersection Observer for Scroll Reveal Animations
             const revealOptions = {
                 threshold: 0.15,
                 rootMargin: "0px 0px -50px 0px"
@@ -264,6 +321,7 @@
             revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
+
     <!-- Mini-Cart Drawer -->
     <div class="cart-drawer-overlay" id="cart-overlay"></div>
     <div class="mini-cart-drawer" id="mini-cart">

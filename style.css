@@ -4029,7 +4029,7 @@ select.custom-select-filter option {
 
 .cat-title {
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -4041,6 +4041,8 @@ select.custom-select-filter option {
     text-align: center;
     background: #000;
     border-bottom: 1px solid #111;
+    position: relative;
+    z-index: 20;
 }
 
 .support-hero h1 {
@@ -4476,5 +4478,93 @@ select.custom-select-filter option {
 
     .cat-title {
         font-size: 0.95rem !important;
+        font-weight: 400 !important;
     }
+
+    .nav-link {
+        font-weight: 400 !important;
+    }
+}
+
+/* Support Search Suggestions */
+.support-search-container {
+    position: relative;
+    z-index: 2000; /* Ensure search container is above sections below */
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000; /* Solid black to cover content below */
+    border: 1px solid #222;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    z-index: 2001;
+    max-height: 350px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #111;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.suggestion-item:hover {
+    background: #111;
+    border-left: 3px solid var(--accent-color);
+}
+
+.suggestion-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-right: 18px;
+    background: #000;
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.suggestion-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-name {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.suggestion-category {
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.no-results {
+    padding: 20px;
+    color: #666;
+    text-align: center;
+    font-size: 0.9rem;
 }

@@ -2,6 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* Helper: pick desktop or mobile image based on screen width */
+    function getResponsiveImage(data) {
+        if (window.innerWidth <= 768 && data.imageMobile) {
+            return data.imageMobile;
+        }
+        return data.image;
+    }
+
     /* --- Feature Switcher: Tabs at Top --- */
     const tabsContainer = document.querySelector('.feature-switcher-tabs');
     if (tabsContainer) {
@@ -24,18 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
             title.textContent = data.title;
             description.textContent = data.description;
             
+            // Pick the right image for current screen size
+            const imgSrc = getResponsiveImage(data);
+
             // Try updating img tag first for natural height adaptation
             const bgImg = tabsContainer.querySelector('.aplus-switcher-bg');
             if (bgImg) {
-                bgImg.src = data.image;
+                bgImg.src = imgSrc;
             } else {
-                tabsContainer.style.backgroundImage = `url(${data.image})`;
+                tabsContainer.style.backgroundImage = `url(${imgSrc})`;
             }
 
             currentIndex = index;
-            
-            // On mobile, scroll the active tab into view (Disabled as it causes page jump on load)
-            // tabs[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         }
 
         tabs.forEach((tab, index) => {
@@ -81,11 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
             nTitle.textContent = data.title;
             nDescription.textContent = data.description;
             
+            // Pick the right image for current screen size
+            const imgSrc = getResponsiveImage(data);
+            
             const bgImgN = numberedContainer.querySelector('.aplus-switcher-bg');
             if (bgImgN) {
-                bgImgN.src = data.image;
+                bgImgN.src = imgSrc;
             } else {
-                numberedContainer.style.backgroundImage = `url(${data.image})`;
+                numberedContainer.style.backgroundImage = `url(${imgSrc})`;
             }
 
             currentIndexN = index;
